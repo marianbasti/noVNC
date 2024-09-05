@@ -338,5 +338,22 @@
         <source src="app/sounds/bell.oga" type="audio/ogg">
         <source src="app/sounds/bell.mp3" type="audio/mpeg">
     </audio>
+    <script>
+        window.onload = function() {
+            // Get the URL parameters
+            const params = new URLSearchParams(window.location.search);
+            const host = window.location.hostname;
+            document.getElementById('noVNC_setting_host').value = host;
+          
+            // Check if 'vdisplay2' exists in the URL
+            if (params.has('vdisplay2')) {
+                // Get the value of 'vdisplay2'
+                const vdisplay2Value = params.get('vdisplay2');
+                
+                // Set the value of the input field
+                document.getElementById('noVNC_setting_port').value = vdisplay2Value;
+            }
+        };
+    </script>
  </body>
 </html>
