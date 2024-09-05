@@ -998,11 +998,8 @@ const UI = {
         const host = window.location.hostname;
         const path = UI.getSetting('path');
         const params = new URLSearchParams(window.location.search);
-        // Check if 'vdisplay2' exists in the URL
-       if (params.has('vdisplay2')) {
-       // Get the value of 'vdisplay2'
-           const port = params.get('vdisplay2');
-
+        const port = params.get('vdisplay2');
+             
         if (typeof password === 'undefined') {
             password = WebUtil.getConfigVar('password');
             UI.reconnectPassword = password;
