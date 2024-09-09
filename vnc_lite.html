@@ -131,10 +131,8 @@
         const host = readQueryVariable('host', window.location.hostname);
         
         const params = new URLSearchParams(window.location.search);
-        if (params.has('vdisplay2')) {
-            // Get the value of 'vdisplay2'
-            const port = params.get('vdisplay2');
-        }
+        console.log(params)
+        const port = params.get('vdisplay2');
         
         const password = readQueryVariable('password');
         const path = readQueryVariable('path', 'websockify');
