@@ -116,7 +116,6 @@
         const port = params.get('vdisplay2');
         
         const password = readQueryVariable('password');
-        const path = readQueryVariable('path', 'websockify');
 
         // | | |         | | |
         // | | | Connect | | |
@@ -131,11 +130,10 @@
         } else {
             url = 'ws';
         }
-        url += '://' + host;
+        url += '://' + host +  '/simulador/websockify';
         if(port) {
-            url += ':' + port;
+            url += '?vdisplay1=' + port;
         }
-        url += '/' + path;
 
         // Creating a new RFB object will start a new connection
         rfb = new RFB(document.getElementById('screen'), url,
