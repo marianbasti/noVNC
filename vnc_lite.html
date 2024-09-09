@@ -129,7 +129,12 @@
         // Read parameters specified in the URL query string
         // By default, use the host and port of server that served this file
         const host = readQueryVariable('host', window.location.hostname);
-        let port = readQueryVariable('port', window.location.port);
+
+        if (params.has('vdisplay2')) {
+            // Get the value of 'vdisplay2'
+            const port = params.get('vdisplay2');
+        }
+        
         const password = readQueryVariable('password');
         const path = readQueryVariable('path', 'websockify');
 
