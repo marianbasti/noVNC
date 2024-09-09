@@ -129,7 +129,8 @@
         // Read parameters specified in the URL query string
         // By default, use the host and port of server that served this file
         const host = readQueryVariable('host', window.location.hostname);
-
+        
+        const params = new URLSearchParams(window.location.search);
         if (params.has('vdisplay2')) {
             // Get the value of 'vdisplay2'
             const port = params.get('vdisplay2');
